@@ -7,7 +7,7 @@
 
 	</thead>
   <tbody>
-  	
+
 
 <tr *ngFor="let profesor of listadoProfesores" app-fila-profesor [unProfesor]="profesor" (profesorSeleccionado)="mostrarDetalles($event)" >
     <!--td class="badge">{{profesor.legajo}}</td>
@@ -21,5 +21,7 @@
 
 
 
-  </tbody> 
+  </tbody>
 </table>
+
+<!--- app-fila-profesor es una directiva-->

@@ -7,11 +7,11 @@ import { Alumno } from '../../clases/alumno';
   styleUrls: ['./listado-alumnos.component.css']
 })
 export class ListadoAlumnosComponent implements OnInit {
- 
+
 
  @Input() listadoAlumnos: Alumno[] ;
  @Output() alumnoSeleccionado: EventEmitter<any>= new EventEmitter<any>();
-  constructor() { 
+  constructor() {
 /*
   this.listadoAlumnos = [
     { apellido: 'Aguas' ,nombre:"rogelio",legajo: 999 },
@@ -28,3 +28,5 @@ export class ListadoAlumnosComponent implements OnInit {
     this.alumnoSeleccionado.emit(unAlumno);
   }
 }
+
+

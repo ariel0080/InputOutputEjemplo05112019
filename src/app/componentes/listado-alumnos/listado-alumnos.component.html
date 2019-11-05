@@ -15,13 +15,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let alumno of listadoAlumnos">
-        <td>{{alumno.legajo}}</td>
+      <tr *ngFor="let alumno of listadoAlumnos" app-fila-alumno [unAlumno]="alumno">
+     <!--    <td>{{alumno.legajo}}</td>
         <td>{{alumno.apellido}}</td>
         <td>{{alumno.nombre}}</td>
         <td><button type="button" class="btn btn-info btn-circle"   (click)="mostrarDetalles(alumno)"><i class="fa fa-check"></i>
-        </button></td>
+        </button></td> -->
       </tr>
-     
+
     </tbody>
   </table>

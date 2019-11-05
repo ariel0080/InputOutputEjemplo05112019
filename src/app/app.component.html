@@ -7,22 +7,24 @@
 
   <header id="header">
 
-  
+
       <h1 id="site-logo"><a href="#">Principal</a></h1>
       <h2 id="site-description">{{title}}</h2>
-    
+
     <nav>
 
       <ul id="main-nav" class="clearfix">
-        <li><a  class="btn">Alumnos<br> ABM</a></li>
+        <li><a  class="btn" >Alumnos<br> ABM</a></li>
         <li><a  class="btn">Catedras<br>ABM</a> </li>
         <li><a  class="btn">Examenes<br>ABM </a> </li>
-      
-        
+        <li><a  class="btn" (click)="listadoProfesores()">Listado Profesores<br></a> </li>
+        <li><a  class="btn" (click)="listadoAlumnos()">Listado Alumnos<br></a> </li>
+
+
         <li> <a  class="btn btn-success">mas-></a> </li>
-        
+
       </ul>
-      <!-- /#main-nav --> 
+      <!-- /#main-nav -->
     </nav>
 
     <form id="searchform">
@@ -31,7 +33,7 @@
 
   </header>
   <!-- /#header -->
-  
+
   <div id="content" >
 
     <article  class="post clearfix">
@@ -43,20 +45,20 @@
       <hr>
       <div id="principal">
 
-          <!--app-listado-alumnos [listadoAlumnos]="listadoPrincipal"    (alumnoSeleccionado)="tomarAlumnoParaDetalles($event)"></app-listado-alumnos-->
+          <app-listado-alumnos *ngIf="listadodealumnos"[listadoAlumnos]="listadoPrincipal"    (alumnoSeleccionado)="tomarAlumnoParaDetalles($event)"></app-listado-alumnos>
           <!--app-listado-profesor [listadoProfesores]="ListadoProfesoresPrincipal"  (profesorSeleccionado)="tomarProfesorParaDetalles($event)"></app-listado-profesor-->
 
-          <app-tabla-profesor [listadoProfesores]="ListadoProfesoresPrincipal"
-           (profesorSeleccionado)="tomarProfesorParaDetalles($event)" ></app-tabla-profesor>    
-      </div>    
+          <app-tabla-profesor *ngIf="listadodeprofesores" [listadoProfesores]="ListadoProfesoresPrincipal"
+           (profesorSeleccionado)="tomarProfesorParaDetalles($event)" ></app-tabla-profesor>
+      </div>
 
     </article>
     <!-- /.post -->
 
   </div>
-  <!-- /#content --> 
-  
-  
+  <!-- /#content -->
+
+
   <aside id="sidebar">
 
     <div id="botonesABM">
@@ -73,7 +75,7 @@
           <app-profesor (SeCreoUnProfesor)="mostrarProfesor($event)"></app-profesor>
 
         </div>
-      
+
     </section>
     <section class="widget clearfix" >
       <h4 class="widgettitle">Detalle </h4>
@@ -82,20 +84,20 @@
             <!--app-detalle-alumnos [alumnoParaMostrar]="alumnoSeleccionado"    > </app-detalle-alumnos-->
             <app-detalle-profesor [unProfesor]="profesorParaMostrar"></app-detalle-profesor>
           </div>
-      
+
     </section>
     <!-- /.widget -->
-            
+
   </aside>
   <!-- /#sidebar -->
 
   <footer id="footer">
-  
+
     <p>templete by <a href="http://www.octavio.com.ar">Octavio Villegas</a></p>
 
   </footer>
-  <!-- /#footer --> 
-  
+  <!-- /#footer -->
+
 </div>
 <!-- /#pagewrap -->
 

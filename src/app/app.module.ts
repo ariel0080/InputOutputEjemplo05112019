@@ -12,6 +12,8 @@ import { DetalleProfesorComponent } from './componentes/detalle-profesor/detalle
 import { ListadoProfesorComponent } from './componentes/listado-profesor/listado-profesor.component';
 import { TablaProfesorComponent } from './componentes/tabla-profesor/tabla-profesor.component';
 import { FilaProfesorComponent } from './componentes/fila-profesor/fila-profesor.component';
+import { FilaAlumnoComponent } from './componentes/fila-alumno/fila-alumno.component';
+import { TablaAlumnoComponent } from './componentes/tabla-alumno/tabla-alumno.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +24,9 @@ import { FilaProfesorComponent } from './componentes/fila-profesor/fila-profesor
     DetalleProfesorComponent,
     ListadoProfesorComponent,
     TablaProfesorComponent,
-    FilaProfesorComponent
+    FilaProfesorComponent,
+    FilaAlumnoComponent,
+    TablaAlumnoComponent
   ],
   imports: [
     FormsModule,

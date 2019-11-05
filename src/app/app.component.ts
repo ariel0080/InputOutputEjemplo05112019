@@ -9,11 +9,14 @@ import { Profesor } from './clases/profesor';
 export class AppComponent {
   title = 'Ejemplo  @Input()  @Output()  ';
   listadoPrincipal: Alumno[] ;
-  alumnoSeleccionado:Alumno;
-  profesorParaMostrar:Profesor;
-  ListadoProfesoresPrincipal:Profesor[];
+  alumnoSeleccionado: Alumno;
+  profesorParaMostrar: Profesor;
+  ListadoProfesoresPrincipal: Profesor[];
 
-  constructor() { 
+  listadodealumnos = false;
+  listadodeprofesores = false;
+
+  constructor() {
         this.profesorParaMostrar= new Profesor("Clementina","Programacion",777);
         this.listadoPrincipal = [
           { apellido: 'Aguas' ,nombre:"rogelio",legajo: 666 },
@@ -27,20 +30,32 @@ export class AppComponent {
     }
   tomarAlumnoCreado(NuevoAlumno: Alumno)
   {
-    this.listadoPrincipal.push(NuevoAlumno);   
-  }
+    this.listadoPrincipal.push(NuevoAlumno);
+    }
   tomarAlumnoParaDetalles(NuevoAlumno: Alumno)
   {
-    this.alumnoSeleccionado=NuevoAlumno;   
+    this.alumnoSeleccionado=NuevoAlumno;
   }
   tomarProfesorParaDetalles(NuevoProfe: Profesor)
   {
-    this.profesorParaMostrar=NuevoProfe;   
+    this.profesorParaMostrar=NuevoProfe;
   }
   mostrarProfesor(parametroProfesor:Profesor)
   {
       console.info("profesor",parametroProfesor);
       //this.profesorParaMostrar=parametroProfesor;
       this.ListadoProfesoresPrincipal.push(parametroProfesor);
+  }
+
+  listadoAlumnos()
+  {
+    this.listadodealumnos = true;
+    this.listadodeprofesores = false;
+  }
+
+  listadoProfesores()
+  {
+    this.listadodealumnos = false;
+    this.listadodeprofesores = true;
   }
 }
